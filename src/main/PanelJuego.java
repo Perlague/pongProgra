@@ -5,7 +5,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
-import java.awt.event.KeyEvent; // Add this import
+import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class PanelJuego extends JPanel implements Runnable {
@@ -21,15 +21,15 @@ public class PanelJuego extends JPanel implements Runnable {
 					 altoPantalla = renPantallaMax * tamañoCelda,
 					 
 					 //Dimensiones de los jugadores
-					 anchoJugador = tamañoCelda,
+					 anchoJugador = tamañoCelda / 2,
 					 altoJugador = tamañoCelda * 3;
 					 
 	private int 
 					 //Posicion y velocidad del 3er objeto
 					 objetoX = anchoPantalla / 2,
 					 objetoY = altoPantalla / 2,
-					 velocidadObjetoX = 8,
-					 velocidadObjetoY = 8,
+					 velocidadObjetoX = 12,
+					 velocidadObjetoY = 12,
 					 tamañoObjeto = tamañoCelda;
 
 	public int 	jugadorX = 15,
