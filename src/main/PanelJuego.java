@@ -5,6 +5,8 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
+import java.awt.event.KeyEvent; // Add this import
+import java.awt.event.KeyListener;
 
 public class PanelJuego extends JPanel implements Runnable {
 	
