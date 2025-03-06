@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "PongProgra/main.Main",
+            "projectName": "Juego2D"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -14,8 +21,8 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
-            "mainClass": "Juego2D/main.Main",
-            "projectName": "Juego2D"
+            "mainClass": "PongProgra/main.Main",
+            "projectName": "PongProgra"
         }
     ]
 }

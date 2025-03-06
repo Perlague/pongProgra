@@ -4,7 +4,7 @@
 /**
  * 
  */
-module Juego2D {
+module PongProgra {
 	requires java.desktop;
     exports main; 
 }

@@ -22,7 +22,7 @@ public class PanelJuego extends JPanel implements Runnable {
 					 
 					 //Dimensiones de los jugadores
 					 anchoJugador = tamañoCelda / 2,
-					 altoJugador = tamañoCelda * 3;
+					 altoJugador = tamañoCelda * 2;
 					 
 	private int 
 					 //Posicion y velocidad del 3er objeto
@@ -30,12 +30,12 @@ public class PanelJuego extends JPanel implements Runnable {
 					 objetoY = altoPantalla / 2,
 					 velocidadObjetoX = 12,
 					 velocidadObjetoY = 12,
-					 tamañoObjeto = tamañoCelda;
+					 tamañoObjeto = tamañoCeldaOriginal;
 
 	public int 	jugadorX = 15,
 				jugadorY = 100,
 				velocidad = 8,
-				jugador2X = anchoPantalla - tamañoCelda - 15,
+				jugador2X = anchoPantalla - tamañoCelda,
 				jugador2Y = 100;
 	
 	ManejadorTecla mTecla = new ManejadorTecla();
@@ -89,17 +89,17 @@ public class PanelJuego extends JPanel implements Runnable {
 	public void update() {
 		// Mover el primer jugador y evitar que se salga de la pantalla
 		if(mTecla.arribaPresionado && jugadorY > 0) {
-			jugadorY -= velocidad;
+			jugadorY -= velocidad * 2;
 		}
 		if(mTecla.abajoPresionado && jugadorY + altoJugador < altoPantalla) {
-			jugadorY += velocidad;
+			jugadorY += velocidad * 2;
 		}
 		 //Segundo jugador
 		if(mTecla.arribaFlechaPresionado && jugador2Y > 0) {
-			jugador2Y -= velocidad;
+			jugador2Y -= velocidad * 2;
 		}
 		if(mTecla.abajoFlechaPresionado && jugador2Y + altoJugador < altoPantalla) {
-			jugador2Y += velocidad;
+			jugador2Y += velocidad * 2;
 		}
 		// Mover el tercer objeto
 		objetoX += velocidadObjetoX;
