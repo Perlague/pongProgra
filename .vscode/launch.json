@@ -13,16 +13,19 @@
         },
         {
             "type": "java",
-            "name": "Current File",
+            "name": "Main",
             "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "main.Main",
+            "projectName": "PongProgra",
+            "modulePaths": [
+                "${workspaceFolder}/bin"
+            ]
         },
         {
             "type": "java",
-            "name": "Main",
+            "name": "Current File",
             "request": "launch",
-            "mainClass": "PongProgra/main.Main",
-            "projectName": "PongProgra"
+            "mainClass": "${file}"
         }
     ]
 }

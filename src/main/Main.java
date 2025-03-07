@@ -11,7 +11,7 @@ public class Main {
 		
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ventana.setResizable(false);
-		ventana.setTitle("Juego 2D");
+		ventana.setTitle("Pong");
 		ventana.setResizable(false);
 		//ventana.setLocationRelativeTo(null);
 		ventana.setVisible(true);

@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
+import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -37,6 +38,10 @@ public class PanelJuego extends JPanel implements Runnable {
 				velocidad = 8,
 				jugador2X = anchoPantalla - tamañoCelda,
 				jugador2Y = 100;
+
+	//Varuable para llevar la puntuación
+    private int puntoJugador1 = 0;
+    private int puntoJugador2 = 0;
 	
 	ManejadorTecla mTecla = new ManejadorTecla();
 	Thread threadJuego;
@@ -106,12 +111,17 @@ public class PanelJuego extends JPanel implements Runnable {
 		objetoY += velocidadObjetoY;
 	
 		//Objeto rebota en los bordes del panel
-		if(objetoX <= 0 || objetoX + tamañoObjeto >= anchoPantalla) {
-			velocidadObjetoX = -velocidadObjetoX;
-		}
-		if(objetoY <= 0 || objetoY + tamañoObjeto >= altoPantalla) {
-			velocidadObjetoY = -velocidadObjetoY;
-		}
+		if(objetoX <= 0) {
+            velocidadObjetoX = -velocidadObjetoX;
+            puntoJugador2++; //Incrementa la puntuación del jugador 2
+        }
+        if(objetoX + tamañoObjeto >= anchoPantalla) {
+            velocidadObjetoX = -velocidadObjetoX;
+            puntoJugador1++; //Incrementa la puntuación del jugador 1
+        }
+        if(objetoY <= 0 || objetoY + tamañoObjeto >= altoPantalla) {
+            velocidadObjetoY = -velocidadObjetoY;
+        }
 	
 		//Objeto rebota en los jugadores
 		if(objetoX <= jugadorX + anchoJugador && objetoX + tamañoObjeto >= jugadorX &&
@@ -139,7 +149,14 @@ public class PanelJuego extends JPanel implements Runnable {
 
 		g2.setColor(Color.blue);
 		g2.fillRect(objetoX, objetoY, tamañoObjeto, tamañoObjeto);
-	
+		
+		//Mostrar las puntuaciones
+		g2.setFont(new Font("Arial", Font.BOLD, 24));
+		g2.setColor(Color.white);
+		g2.drawString("P1: " + puntoJugador1, 10, 30);
+		g2.drawString("P2: " + puntoJugador2, anchoPantalla - 100, 30);
+
+
 		g2.dispose();
 	}
 	
